@@ -14,7 +14,7 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "app/assets/*"
     ],
     "ios": {
       "supportsTablet": true
@@ -26,7 +26,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./app/assets/favicon.png"
     },
     "description": "A project for an imaginary restaurant",
     "githubUrl": "https://github.com/trisdauvergne/react-native-restaurant"

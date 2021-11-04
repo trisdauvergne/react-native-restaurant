@@ -16,3 +16,5 @@ Published via Expo [here](https://expo.dev/@trisdauvergne/restaurant)
 - react-navigation/native-stack
 - expo
 - react
+- expo-app-loading
+- expo-google-fonts
