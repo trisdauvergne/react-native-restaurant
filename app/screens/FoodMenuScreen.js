@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 
 const FoodMenuScreen = (props) => {
     return (
@@ -7,6 +7,7 @@ const FoodMenuScreen = (props) => {
             <Text>
                 Food glorious food
             </Text>
+            <Button title='Order page' />
         </View>
     );
 }

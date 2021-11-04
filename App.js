@@ -11,6 +11,7 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import FoodMenuScreen from './app/screens/FoodMenuScreen';
 import LoginScreen from './app/screens/LoginScreen.js';
 import DrinksMenuScreen from './app/screens/DrinksMenuScreen';
+import ReservationScreen from './app/screens/ReservationScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,10 @@ const App = () => {
         <Stack.Screen
           name='Drinks'
           component={DrinksMenuScreen}
+        />
+        <Stack.Screen
+          name='Reservations'
+          component={ReservationScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
