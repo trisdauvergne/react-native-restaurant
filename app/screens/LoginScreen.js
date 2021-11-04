@@ -29,7 +29,7 @@ const LoginScreen = ({ navigation }) => {
                 LOGIN
             </Text>
             <Text>
-                (Authentication system can be implemented here) 
+                (Authentication system could be implemented here) 
             </Text>
             <TextInput
                 style={styles.textInput}

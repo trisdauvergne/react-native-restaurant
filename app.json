@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "A project for an imaginary restaurant",
+    "githubUrl": "https://github.com/trisdauvergne/react-native-restaurant"
   }
 }

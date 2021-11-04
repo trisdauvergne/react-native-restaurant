@@ -2,6 +2,8 @@
 
 ## Built using React-Native and initiated with Expo
 
+Published via Expo [here](https://expo.dev/@trisdauvergne/restaurant)
+
 ---
 
 ### An imaginary restaurant, with imaginary food and drink, with an imaginary ordering service with imaginary tables to book
