@@ -1,16 +1,18 @@
 import React from 'react';
 import {
     Text,
-    View,
+    SafeAreaView,
     StyleSheet,
+    View,
     Button,
-    ImageBackground
 } from 'react-native';
 import { 
     useFonts,
     FugazOne_400Regular 
 } from '@expo-google-fonts/fugaz-one';
 import AppLoading from 'expo-app-loading';
+
+import BackgroundScreen from './BackgroundScreen';
 
 const WelcomeScreen = ({ navigation }) => {
     let [fontsLoaded] = useFonts({
@@ -21,44 +23,39 @@ const WelcomeScreen = ({ navigation }) => {
         return <AppLoading />
     } else {
         return (
-            <ImageBackground
-                source={require('../assets/filipinofood.jpg')}
-                style={styles.background}
+            <SafeAreaView
+                style={styles.container}
             >
-                <View
-                    style={styles.container}
-                >
-                    <Text style={styles.heading}>
-                        RESTAURANT
-                    </Text>
-                    <Text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
-                    </Text>
-                    <View style={styles.btnContainer}>
-                        <Button
-                            title='Food Menu'
-                            onPress={() => navigation.navigate('Food')}
-                        />
-                        <Button
-                            title='Drinks Menu'
-                            onPress={() => navigation.navigate('Drinks')}
-                        />
-                        <Button
-                            title='Book a Table'
-                            onPress={() => navigation.navigate('Reservations')}
-                        />
-                    </View>
+                <Text style={styles.heading}>
+                    RESTAURANT
+                </Text>
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
+                </Text>
+                <View style={styles.btnContainer}>
+                    <Button
+                        title='Food Menu'
+                        onPress={() => navigation.navigate('Food')}
+                    />
+                    <Button
+                        title='Drinks Menu'
+                        onPress={() => navigation.navigate('Drinks')}
+                    />
+                    <Button
+                        title='Book a Table'
+                        onPress={() => navigation.navigate('Reservations')}
+                    />
                 </View>
-            </ImageBackground> 
+            </SafeAreaView>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    background: {
-      flex: 1,
-    //   justifyContent: 'center'
-    },
+    // background: {
+    //   flex: 1,
+    // //   justifyContent: 'center'
+    // },
     btnContainer: {
         alignSelf: 'flex-end',
     },

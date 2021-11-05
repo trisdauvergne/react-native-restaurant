@@ -1,5 +1,9 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import {
+    Button,
+    Text,
+    View,
+} from 'react-native';
 
 const FoodMenuScreen = (props) => {
     return (
@@ -11,5 +15,6 @@ const FoodMenuScreen = (props) => {
         </View>
     );
 }
+
 
 export default FoodMenuScreen;
