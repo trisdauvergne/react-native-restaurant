@@ -21,7 +21,9 @@ const HomeStack = createStackNavigator(
         initialRouteName: 'Welcome',
         headerMode: 'none',
         defaultNavigationOptions: {
-            cardStyle: { backgroundColor: 'transparent' }
+            cardStyle: {
+                backgroundColor: 'transparent'
+            },
         }
     }
 );

@@ -1052,6 +1052,11 @@
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/fugaz-one/-/fugaz-one-0.2.0.tgz#5b414659657c7906aebcfc6d042572a9c414ffe6"
   integrity sha512-FxEPIS5xEqc+xSONfWu1blOlVSA2ti/7nItoPrd3YUbwnUZ4iNDYph/HPk6wZvdMif1Q2zzSSF51uA6dCfLpWw==
 
+"@expo-google-fonts/lato@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/lato/-/lato-0.2.0.tgz#e096ed61d23307932ec4fbe3f9de8a3d6248706f"
+  integrity sha512-euVC8IfCpHlI0MDgvf6MNWrgnp4pPvAMiEDUCBmau3cvJBeMASQdtOF+Lz555hzgsMfDV5MbFbWRe+RvylZ1qQ==
+
 "@expo/config-plugins@3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-3.1.0.tgz#0752ff33c5eab21cf42034a44e79df97f0f867f8"

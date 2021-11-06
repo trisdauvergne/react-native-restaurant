@@ -4,68 +4,67 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
-    Button,
+    Pressable,
 } from 'react-native';
-import { 
-    useFonts,
-    FugazOne_400Regular 
-} from '@expo-google-fonts/fugaz-one';
-import AppLoading from 'expo-app-loading';
-
-import BackgroundScreen from './BackgroundScreen';
+import { globalStyles } from '../styles/global';
 
 const WelcomeScreen = ({ navigation }) => {
-    let [fontsLoaded] = useFonts({
-        FugazOne_400Regular
-    })
-
-    if(!fontsLoaded) {
-        return <AppLoading />
-    } else {
-        return (
-            <SafeAreaView
-                style={styles.container}
-            >
-                <Text style={styles.heading}>
-                    RESTAURANT
-                </Text>
-                <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
-                </Text>
-                <View style={styles.btnContainer}>
-                    <Button
-                        title='Food Menu'
-                        onPress={() => navigation.navigate('Food')}
-                    />
-                    <Button
-                        title='Drinks Menu'
-                        onPress={() => navigation.navigate('Drinks')}
-                    />
-                    <Button
-                        title='Book a Table'
-                        onPress={() => navigation.navigate('Reservations')}
-                    />
-                </View>
-            </SafeAreaView>
-        );
-    }
+    return (
+        <SafeAreaView style={globalStyles.container}>
+            <Text style={styles.headingText}>
+                baboy
+            </Text>
+            <Text style={globalStyles.sectionIntroText}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
+            </Text>
+            <View style={styles.btnContainer}>
+                <Pressable
+                    onPress={() => navigation.navigate('Food')}
+                    style={globalStyles.btn}
+                >
+                    <Text
+                        style={globalStyles.btnText}
+                    >
+                        Food
+                    </Text>
+                </Pressable>
+                <Pressable
+                    onPress={() => navigation.navigate('Drinks')}
+                    style={globalStyles.btn}
+                >
+                    <Text
+                        style={globalStyles.btnText}
+                    >
+                        Drinks
+                    </Text>
+                </Pressable>
+                <Pressable
+                    onPress={() => navigation.navigate('Reservations')}
+                    style={globalStyles.btn}
+                    >
+                    <Text
+                        style={globalStyles.btnText}
+                    >
+                        Bookings
+                    </Text>
+                </Pressable>
+            </View>
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
-    // background: {
-    //   flex: 1,
-    // //   justifyContent: 'center'
-    // },
     btnContainer: {
-        alignSelf: 'flex-end',
+        flexDirection: 'row',
+        position: 'absolute',
+        bottom: '20%',
     },
-    container: {
-        alignItems: 'center',
-    },
-    heading: {
-        fontFamily: 'FugazOne_400Regular',
-        fontSize: 50,
+    headingText: {
+        fontFamily: 'fugaz-one',
+        fontSize: 120,
+        marginTop: 20,
         color: '#FAF9F6',
+        textAlign: 'center',
     },
 })
 

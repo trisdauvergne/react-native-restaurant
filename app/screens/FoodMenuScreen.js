@@ -2,17 +2,17 @@ import React from 'react';
 import {
     Button,
     Text,
-    View,
+    SafeAreaView,
 } from 'react-native';
 
-const FoodMenuScreen = (props) => {
+const FoodMenuScreen = () => {
     return (
-        <View>
+        <SafeAreaView>
             <Text>
                 Food glorious food
             </Text>
             <Button title='Order page' />
-        </View>
+        </SafeAreaView>
     );
 }
 

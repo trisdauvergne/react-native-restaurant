@@ -1,53 +1,45 @@
 import React from 'react';
 import {
-  StyleSheet,
+  // StyleSheet,
 } from 'react-native';
-// import {
-//   NavigationContainer
-// } from '@react-navigation/native';
-// import {
-//   createNativeStackNavigator
-// } from '@react-navigation/native-stack';
+import { 
+  useFonts,
+  FugazOne_400Regular 
+} from '@expo-google-fonts/fugaz-one';
+import { 
+  // Lato_100Thin,
+  // Lato_100Thin_Italic,
+  // Lato_300Light,
+  // Lato_300Light_Italic,
+  Lato_400Regular,
+  // Lato_400Regular_Italic,
+  Lato_700Bold,
+  // Lato_700Bold_Italic,
+  // Lato_900Black,
+  // Lato_900Black_Italic 
+} from '@expo-google-fonts/lato'
+import AppLoading from 'expo-app-loading';
 
 import BackgroundScreen from './app/screens/BackgroundScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import FoodMenuScreen from './app/screens/FoodMenuScreen';
 
 import Navigator from './app/routes/HomeStack';
 
-// const Stack = createNativeStackNavigator();
-
 const App = () => {
-  return (
-    <BackgroundScreen>
-      <Navigator style={styles.navigator}/>
-      {/* <WelcomeScreen /> */}
-      {/* <NavigationContainer style={styles.navigator}>
-        <Stack.Navigator>
-          <Stack.Screen
-            name='Welcome'
-            component={WelcomeScreen}
-            options={{
-              headerShown: false
-            }}
-          />
-          <Stack.Screen
-            name='Food'
-            component={FoodMenuScreen}
-            options={{
-              headerShown: false
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer> */}
-    </BackgroundScreen>
-  );
-}
+  let [fontsLoaded] = useFonts({
+    'fugaz-one': FugazOne_400Regular,
+    'lato-regular': Lato_400Regular,
+    'lato-bold': Lato_700Bold,
+  });
 
-const styles = StyleSheet.create({
-  navigator: {
-    color: 'red'
+  if (!fontsLoaded) {
+    return <AppLoading />
+  } else {
+    return (
+      <BackgroundScreen>
+        <Navigator />
+      </BackgroundScreen>
+    );
   }
-})
+}
 
 export default App;
