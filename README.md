@@ -12,7 +12,8 @@ Published via Expo [here](https://expo.dev/@trisdauvergne/restaurant)
 
 **Dependences (for full list refer to package.json)**
 
-- react-navigation/nativve
+- react-navigation - CORE
+- react-navigation/native
 - react-navigation/native-stack
 - expo
 - react
