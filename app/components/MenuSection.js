@@ -1,17 +1,34 @@
-import React from 'react'
+import React, {
+    useState
+} from 'react'
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Pressable
 } from 'react-native'
+import DishSection from './DishSection';
 
 const MenuSection = ({ section }) => {
-    // console.log('SECTION', section);
+    // console.log('SECTION ITEMS', section.entries.items);
+    const [ sectionVisible, setSectionVisible ] = useState(false);
+
     return (
         <View>
-            <Text style={styles.sectionHeading}>
-                {section.name}
-            </Text>
+            <Pressable
+                onPress={() => setSectionVisible(!sectionVisible)}
+            >
+                <Text style={styles.sectionHeading}>
+                    {section.name}
+                </Text>
+            </Pressable>
+            {sectionVisible && 
+                <View
+                    style={styles.dishBackground}
+                >
+                    {section.entries.items.map((dish, i) => <DishSection dish={dish} key={i} />)}
+                </View>    
+            }
         </View>
     )
 };
@@ -22,7 +39,13 @@ const styles = StyleSheet.create({
         color: '#FAF9F6',
         fontSize: 30,
         textAlign: 'center'
-    }
+    },
+    dishBackground: {
+        backgroundColor: '#FAF9F6',
+        marginHorizontal: '10%',
+        padding: '5%',
+        opacity: 0.6
+    },
 })
 
 export default MenuSection
