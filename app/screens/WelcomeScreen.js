@@ -9,6 +9,7 @@ import {
 import { globalStyles } from '../styles/global';
 
 const WelcomeScreen = ({ navigation }) => {
+    
     return (
         <SafeAreaView style={globalStyles.container}>
             <Text style={styles.headingText}>
