@@ -15,7 +15,7 @@ const HomeStack = createStackNavigator(
         Welcome: { screen: WelcomeScreen },
         Food: { screen: FoodMenuScreen },
         Drinks: { screen: DrinksMenuScreen },
-        Reservation: { screen: ReservationScreen }
+        Reservation: { screen: ReservationScreen },
     },
     {
         initialRouteName: 'Welcome',

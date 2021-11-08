@@ -2,7 +2,7 @@ import React from 'react'
 import {
     ImageBackground,
     StyleSheet
- } from 'react-native'
+ } from 'react-native';
 
 const BackgroundScreen = ({ children }) => {
     return (

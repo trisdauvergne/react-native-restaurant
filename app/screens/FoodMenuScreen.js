@@ -4,7 +4,8 @@ import {
     ScrollView,
     Pressable,
     Text,
-    StyleSheet
+    StyleSheet,
+    View
 } from 'react-native';
 
 import MenuSection from '../components/MenuSection'
