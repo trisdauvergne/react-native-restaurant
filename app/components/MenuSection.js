@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     sectionHeading: {
         fontFamily: 'fugaz-one',
         color: '#FAF9F6',
-        fontSize: 30,
+        fontSize: 25,
         textAlign: 'center'
     },
     dishBackground: {

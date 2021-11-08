@@ -13,7 +13,6 @@ import {
 import AppLoading from 'expo-app-loading';
 
 import BackgroundScreen from './app/screens/BackgroundScreen';
-
 // import Navigator from './app/routes/HomeStack';
 import Tabs from './app/routes/Tabs';
 

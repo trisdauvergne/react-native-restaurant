@@ -18,19 +18,12 @@ const FoodMenuScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView>
-            <Pressable
-                // style={globalStyles.btn}
-                onPress={() => navigation.navigate('Welcome')}
-            >
-                <Text
-                    style={[globalStyles.btnText, styles.backBtn]}
-                >
-                    Back
-                </Text>
-            </Pressable>
+            <Text>
+                Food menu
+            </Text>
             <ScrollView>
                 {menu.map((section, i) => <MenuSection section={section} key={i} />)}
-            </ScrollView>
+            </ScrollView> 
             {/* <Button title='Order page' /> */}
         </SafeAreaView>
     );

@@ -25,14 +25,17 @@ const Tabs = () => {
                     tabBarLabelStyle: {
                         fontSize: 20,
                         fontFamily: 'fugaz-one',
-                        color: '#FAF9F6',
-                        marginBottom: 20,
+                        color: 'black',
+                        marginBottom: 10,
                         // backgroundColor: '#FAF9F6',
                         paddingHorizontal: 5,
                     },
                     tabBarStyle: {
-                        backgroundColor: 'transparent',
+                        backgroundColor: '#FAF9F6',
                         borderTopWidth: 0,
+                        marginHorizontal: 10,
+                        borderTopLeftRadius: 10,
+                        borderTopRightRadius: 10
                     },
                     tabBarIconStyle: {
                         display: 'none'
