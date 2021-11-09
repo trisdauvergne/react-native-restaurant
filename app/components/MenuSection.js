@@ -14,11 +14,13 @@ const MenuSection = ({ section }) => {
     const [ sectionVisible, setSectionVisible ] = useState(false);
 
     return (
-        <View>
+        <View style={sectionVisible && styles.containerbackground}>
             <Pressable
                 onPress={() => setSectionVisible(!sectionVisible)}
             >
-                <Text style={styles.sectionHeading}>
+                <Text
+                    style={!sectionVisible ? styles.sectionHeading : {...styles.sectionHeading, color: 'black'}}
+                >
                     {section.name}
                 </Text>
             </Pressable>
@@ -41,11 +43,14 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     dishBackground: {
-        backgroundColor: '#FAF9F6',
-        marginHorizontal: '10%',
-        padding: '5%',
-        opacity: 0.6
+        padding: '3%',
     },
+    containerbackground: {
+        backgroundColor: '#FAF9F6',
+        opacity: 0.6,
+        // padding: '5%',
+        marginHorizontal: '10%',
+    }
 })
 
 export default MenuSection
