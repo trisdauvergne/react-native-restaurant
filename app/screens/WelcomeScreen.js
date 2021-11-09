@@ -3,8 +3,6 @@ import {
     Text,
     SafeAreaView,
     StyleSheet,
-    View,
-    Pressable,
 } from 'react-native';
 
 import { globalStyles } from '../styles/global';
@@ -18,38 +16,6 @@ const WelcomeScreen = ({ navigation }) => {
             <Text style={globalStyles.sectionIntroText}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
             </Text>
-            {/* <View style={styles.btnContainer}>
-                <Pressable
-                    onPress={() => navigation.navigate('Food')}
-                    style={globalStyles.btn}
-                >
-                    <Text
-                        style={globalStyles.btnText}
-                    >
-                        Food
-                    </Text>
-                </Pressable>
-                <Pressable
-                    onPress={() => navigation.navigate('Drinks')}
-                    style={globalStyles.btn}
-                >
-                    <Text
-                        style={globalStyles.btnText}
-                    >
-                        Drinks
-                    </Text>
-                </Pressable>
-                <Pressable
-                    onPress={() => navigation.navigate('Reservations')}
-                    style={globalStyles.btn}
-                    >
-                    <Text
-                        style={globalStyles.btnText}
-                    >
-                        Bookings
-                    </Text>
-                </Pressable>
-            </View> */}
         </SafeAreaView>
     );
 }

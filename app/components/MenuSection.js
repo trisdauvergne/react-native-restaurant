@@ -10,7 +10,6 @@ import {
 import DishSection from './DishSection';
 
 const MenuSection = ({ section }) => {
-    // console.log('SECTION ITEMS', section.entries.items);
     const [ sectionVisible, setSectionVisible ] = useState(false);
 
     return (
