@@ -7,7 +7,7 @@ import {
 const BackgroundScreen = ({ children }) => {
     return (
             <ImageBackground
-                source={require('../assets/filipinofood.jpg')}
+                source={require('../assets/chinesefood.jpg')}
                 style={styles.background}
             >
                 {children}

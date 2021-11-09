@@ -46,10 +46,9 @@ const styles = StyleSheet.create({
         padding: '3%',
     },
     containerbackground: {
-        backgroundColor: '#FAF9F6',
-        opacity: 0.6,
-        // padding: '5%',
+        backgroundColor: 'rgba(250,249,246,0.5)',
         marginHorizontal: '10%',
+        borderRadius: 10
     }
 })
 

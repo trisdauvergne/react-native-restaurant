@@ -34,6 +34,9 @@ const DishSection = ({ dish }) => {
 const styles = StyleSheet.create({
     dishContainer: {
         marginBottom: 10,
+        backgroundColor: 'rgba(250,249,246,0.6)',
+        padding: '3%',
+        borderRadius: 10
     },
     dishName: {
         fontFamily: 'lato-bold',

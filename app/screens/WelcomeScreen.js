@@ -13,7 +13,7 @@ const WelcomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={globalStyles.container}>
             <Text style={styles.headingText}>
-                baboy
+                name
             </Text>
             <Text style={globalStyles.sectionIntroText}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
