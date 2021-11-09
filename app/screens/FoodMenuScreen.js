@@ -18,20 +18,16 @@ const FoodMenuScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView>
-            <Text>
-                Food menu
+            <Text
+                style={globalStyles.screenHeader}
+            >
+                FOOD @ NAME
             </Text>
             <ScrollView>
                 {menu.map((section, i) => <MenuSection section={section} key={i} />)}
             </ScrollView> 
-            {/* <Button title='Order page' /> */}
         </SafeAreaView>
     );
 }
 
-const styles = StyleSheet.create({
-    backBtn: {
-        color: '#FAF9F6'
-    }
-})
 export default FoodMenuScreen;

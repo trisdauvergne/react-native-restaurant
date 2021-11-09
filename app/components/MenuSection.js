@@ -14,15 +14,20 @@ const MenuSection = ({ section }) => {
 
     return (
         <View style={sectionVisible && styles.containerbackground}>
-            <Pressable
-                onPress={() => setSectionVisible(!sectionVisible)}
+            <Text
+                style={!sectionVisible ? styles.sectionHeading : {...styles.sectionHeading, color: 'black'}}
             >
-                <Text
-                    style={!sectionVisible ? styles.sectionHeading : {...styles.sectionHeading, color: 'black'}}
+                {section.name}
+                <Pressable
+                    onPress={() => setSectionVisible(!sectionVisible)}
                 >
-                    {section.name}
-                </Text>
-            </Pressable>
+                    <Text
+                        style={!sectionVisible ? styles.expandBtn : {...styles.expandBtn, color: 'black'}}
+                    >
+                        {!sectionVisible ? '+ See dishes' : '- Hide dishes'}
+                    </Text>
+                </Pressable>
+            </Text>
             {sectionVisible && 
                 <View
                     style={styles.dishBackground}
@@ -40,6 +45,11 @@ const styles = StyleSheet.create({
         color: '#FAF9F6',
         fontSize: 25,
         textAlign: 'center'
+    },
+    expandBtn: {
+        fontFamily: 'fugaz-one',
+        color: '#FAF9F6',
+        marginLeft: 15,
     },
     dishBackground: {
         padding: '3%',

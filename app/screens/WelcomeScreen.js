@@ -11,7 +11,7 @@ const WelcomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={globalStyles.container}>
             <Text style={styles.headingText}>
-                name
+                NAME
             </Text>
             <Text style={globalStyles.sectionIntroText}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
     headingText: {
         fontFamily: 'fugaz-one',
-        fontSize: 120,
+        fontSize: 100,
         marginTop: 20,
         color: '#FAF9F6',
         textAlign: 'center',

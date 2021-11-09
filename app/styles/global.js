@@ -22,6 +22,12 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'fugaz-one',
         color: '#FAF9F6',
     },
+    screenHeader: {
+        fontFamily: 'fugaz-one',
+        color: '#FF3737',
+        fontSize: 45,
+        textAlign: 'center',
+    },
     sectionIntroText: {
         marginHorizontal: '10%',
         fontFamily: 'fugaz-one',

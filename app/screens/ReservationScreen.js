@@ -1,13 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {
+    SafeAreaView,
+    Text
+} from 'react-native';
+
+import { globalStyles } from '../styles/global';
 
 const ReservationScreen = () => {
     return (
-        <View>
-            <Text>
-                RESERVE A TABLE HERE
+        <SafeAreaView>
+            <Text style={globalStyles.screenHeader}>
+                RESERVATIONS (to come)
             </Text>
-        </View>
+        </SafeAreaView>
     )
 }
 

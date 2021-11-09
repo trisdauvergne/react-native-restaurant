@@ -1,13 +1,18 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import {
+    SafeAreaView,
+    Text
+} from 'react-native';
+
+import { globalStyles } from '../styles/global';
 
 const DrinksMenuScreen = () => {
     return (
-        <View>
-            <Text>
-                DRAAAAAANKS
+        <SafeAreaView>
+            <Text style={globalStyles.screenHeader}>
+                DRINKS @ NAME
             </Text>
-        </View>
+        </SafeAreaView>
     )
 }
 
