@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {
+    // useContext
+} from 'react';
 import {
     Text,
     SafeAreaView,
     StyleSheet,
+    Button
 } from 'react-native';
-
-import { globalStyles } from '../styles/global';
+import {
+    globalStyles
+} from '../styles/global';
 
 const WelcomeScreen = ({ navigation }) => {    
     return (
@@ -16,6 +20,7 @@ const WelcomeScreen = ({ navigation }) => {
             <Text style={globalStyles.sectionIntroText}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
             </Text>
+            <Button title='View storage' />
         </SafeAreaView>
     );
 }

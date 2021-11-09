@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {
+  // useEffect,
+  // useContext
+} from 'react';
 import {
   // StyleSheet,
 } from 'react-native';
@@ -11,11 +14,17 @@ import {
   Lato_700Bold,
 } from '@expo-google-fonts/lato'
 import AppLoading from 'expo-app-loading';
-
+import {
+  // OrderItemsContext,
+  OrderItemsProvider
+} from './app/context/OrderContext';
 import BackgroundScreen from './app/screens/BackgroundScreen';
 import Tabs from './app/routes/Tabs';
 
 const App = () => {
+  // const test = useContext(OrderItemsContext);
+  // console.log('in app.js', test);
+
   let [fontsLoaded] = useFonts({
     'fugaz-one': FugazOne_400Regular,
     'lato-regular': Lato_400Regular,
@@ -26,9 +35,11 @@ const App = () => {
     return <AppLoading />
   } else {
     return (
-      <BackgroundScreen>
-        <Tabs />
-      </BackgroundScreen>
+      <OrderItemsProvider>
+        <BackgroundScreen>
+          <Tabs />
+        </BackgroundScreen>
+      </OrderItemsProvider>
     );
   }
 }

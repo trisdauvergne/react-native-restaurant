@@ -1,15 +1,35 @@
-import React from 'react'
+import React, {
+    useContext
+} from 'react'
 import {
     View,
     Text,
-    StyleSheet
-} from 'react-native'
+    StyleSheet,
+    Pressable,
+} from 'react-native';
+import {
+    OrderItemsContext
+} from '../context/OrderContext';
 
 const DishSection = ({ dish }) => {
+    const { addOrderedItem } = useContext(OrderItemsContext);
+
+    const item = {
+        name: dish.name,
+        quantity: 1,
+        price: dish.price
+    };
+
+    const handleOrder = () => {
+        console.log('1. in handleOrder', item)
+        addOrderedItem(item);
+    }
+
     return (
         <View
             style={styles.dishContainer}
         >
+            <View>
             <Text
                 style={styles.dishName}
             >
@@ -27,6 +47,14 @@ const DishSection = ({ dish }) => {
             >
                 {dish.price}
             </Text>
+            </View>
+            <View>
+                <Pressable onPress={handleOrder}>
+                    <Text>
+                        Add
+                    </Text>
+                </Pressable>
+            </View>
         </View>
     )
 };
@@ -36,7 +64,9 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         backgroundColor: 'rgba(250,249,246,0.6)',
         padding: '3%',
-        borderRadius: 10
+        borderRadius: 10,
+        display: 'flex',
+        flexDirection: 'row'
     },
     dishName: {
         fontFamily: 'lato-bold',
