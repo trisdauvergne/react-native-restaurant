@@ -5,7 +5,8 @@ import {
     SafeAreaView,
     Text,
     View,
-    Button
+    Button,
+    StyleSheet
 } from 'react-native';
 import { OrderItemsContext } from '../context/OrderContext';
 
@@ -13,8 +14,6 @@ import { globalStyles } from '../styles/global';
 
 const ReservationScreen = () => {
     const { orderedItems, clearOrderedItems } = useContext(OrderItemsContext);
-
-    console.log('in reservation screen', orderedItems.map(item => item.name));
 
     const clearList = () => {
         clearOrderedItems();
@@ -26,7 +25,19 @@ const ReservationScreen = () => {
                 YOUR ORDER
             </Text>
             <View>
-                {orderedItems ? orderedItems.map((item, i) => <Text key={i}>{item.name}</Text>) : <Text>Your list is empty</Text>}
+                {orderedItems != null ? orderedItems.map((item, i) =>
+                <Text
+                    key={i}
+                    style={styles.text}
+                >
+                    {item.name}
+                </Text>)
+                :
+                <Text
+                    style={styles.text}
+                >
+                    Your list is empty
+                </Text>}
             </View>
             <Button
                 title='Empty list'
@@ -35,5 +46,12 @@ const ReservationScreen = () => {
         </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+    text: {
+        fontFamily: 'lato-bold',
+        color: 'white',
+    }
+})
 
 export default ReservationScreen
