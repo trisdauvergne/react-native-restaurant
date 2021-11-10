@@ -21,7 +21,7 @@ const DishSection = ({ dish }) => {
     };
 
     const handleOrder = () => {
-        console.log('1. in handleOrder', item)
+        // console.log('1. in handleOrder', item)
         addOrderedItem(item);
     }
 

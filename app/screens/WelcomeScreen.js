@@ -1,5 +1,5 @@
 import React, {
-    // useContext
+    useContext
 } from 'react';
 import {
     Text,
@@ -7,11 +7,17 @@ import {
     StyleSheet,
     Button
 } from 'react-native';
+import { OrderItemsContext } from '../context/OrderContext';
 import {
     globalStyles
 } from '../styles/global';
 
-const WelcomeScreen = ({ navigation }) => {    
+const WelcomeScreen = ({ navigation }) => {  
+    const { clearOrderedItems } = useContext(OrderItemsContext);
+    
+    const clearItems = () => {
+        clearOrderedItems();
+    }
     return (
         <SafeAreaView style={globalStyles.container}>
             <Text style={styles.headingText}>
@@ -20,7 +26,7 @@ const WelcomeScreen = ({ navigation }) => {
             <Text style={globalStyles.sectionIntroText}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
             </Text>
-            <Button title='View storage' />
+            <Button title='Clear storage' onPress={clearItems} />
         </SafeAreaView>
     );
 }
