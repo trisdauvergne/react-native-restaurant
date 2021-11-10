@@ -13,10 +13,12 @@ export const OrderItemsProvider = ({ children }) => {
     const getOrderedItems = async () => {
         try {
             const jsonOrders = await AsyncStorage.getItem('@orderKey');
-            console.log('4. in getOrderedItems', JSON.parse(jsonOrders));
-            setOrderedItems(JSON.parse(jsonOrders));
-            // console.log('orderedItems', orderedItems);
-            // return jsonOrders != null ? JSON.parse(jsonOrders) : null;
+            if (jsonOrders !== null) {
+                console.log('4. there are items in storage, in getOrderedItems', JSON.parse(jsonOrders));
+                // setOrderedItems(JSON.parse(jsonOrders));
+            } else {
+                setOrderedItems(JSON.parse(jsonOrders));
+            }
             return;
         } catch (e) {
             console.log('error in OrderContext', e);
@@ -35,16 +37,12 @@ export const OrderItemsProvider = ({ children }) => {
         }
     }
 
-    // useEffect(() => {
-    //     getOrderedItems();
-    // }, []);
-
     useEffect(() => {
         getOrderedItems();
     }, []);
 
     useEffect(() => {
-        console.log('5. in useEffect checking state',orderedItems);
+        console.log('5. in useEffect checking state updated',orderedItems);
     }, [orderedItems]);
 
     return (
