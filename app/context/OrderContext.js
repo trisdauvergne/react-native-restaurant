@@ -39,12 +39,12 @@ export const OrderItemsProvider = ({ children }) => {
 
             if (fetchedData) {
                 const existingOrders = JSON.parse(fetchedData);
-                console.log('existing orders...........', existingOrders);
+                // console.log('existing orders...........', existingOrders);
                 existingOrders.forEach(element => {
                     fetchedOrders.push(element);
                 });
                 fetchedOrders.push(item);
-                console.log('fetched Orders............', fetchedOrders);
+                // console.log('fetched Orders............', fetchedOrders);
                 await AsyncStorage.setItem('@orderKey', JSON.stringify(fetchedOrders));
                 getOrderedItems();
             }

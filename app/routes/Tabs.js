@@ -52,7 +52,7 @@ const Tabs = () => {
                 />
                 <Tab.Screen name='Food' component={FoodMenuScreen} />
                 <Tab.Screen name='Drink' component={DrinksMenuScreen} />
-                <Tab.Screen name='Booking' component={ReservationScreen} />
+                <Tab.Screen name='Order' component={ReservationScreen} />
             </Tab.Navigator>
         </NavigationContainer>
     )
