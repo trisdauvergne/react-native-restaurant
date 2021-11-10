@@ -10,15 +10,12 @@ export const OrderItemsContext = createContext();
 export const OrderItemsProvider = ({ children }) => {
     const [ orderedItems, setOrderedItems ] = useState(null);
 
-    let fetchedOrders = [];
-
     const getOrderedItems = async () => {
         try {
             const existingOrders = await AsyncStorage.getItem('@orderKey');
             if (existingOrders !== null) {
-                fetchedOrders.push(JSON.parse(existingOrders));
-                console.log('These are the orders in getOrderedItems', fetchedOrders);
-                setOrderedItems(fetchedOrders);
+                console.log('in getOrderedItems', JSON.parse(existingOrders));
+                setOrderedItems(JSON.parse(existingOrders));
             } else {
                 setOrderedItems(null);
             }
@@ -28,27 +25,27 @@ export const OrderItemsProvider = ({ children }) => {
         }
     };
 
+    let fetchedOrders = [];
+
     const addOrderedItem = async (item) => {
         const fetchedData = await AsyncStorage.getItem('@orderKey');
-        const existingOrders = JSON.parse(fetchedData);
 
         try {
-            if (!existingOrders) {
-                await AsyncStorage.setItem('@orderKey', JSON.stringify(item));
+            if (!fetchedData) {
+                fetchedOrders.push(item);
+                await AsyncStorage.setItem('@orderKey', JSON.stringify(fetchedOrders));
                 getOrderedItems();
             }
 
-            if (existingOrders && orderedItems.length === 1) {
-                console.log('parsed existing orders', existingOrders);
-
-                fetchedOrders.push(existingOrders);
-                console.log('fetchedOrders 1', fetchedOrders);
-                
+            if (fetchedData) {
+                const existingOrders = JSON.parse(fetchedData);
+                console.log('existing orders...........', existingOrders);
+                existingOrders.forEach(element => {
+                    fetchedOrders.push(element);
+                });
                 fetchedOrders.push(item);
-                console.log('fetchedOrders 2', fetchedOrders);
-
-                await AsyncStorage.mergeItem('@orderKey', JSON.stringify(fetchedOrders));
-
+                console.log('fetched Orders............', fetchedOrders);
+                await AsyncStorage.setItem('@orderKey', JSON.stringify(fetchedOrders));
                 getOrderedItems();
             }
         } catch (e) {
