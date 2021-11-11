@@ -26,7 +26,7 @@ const WelcomeScreen = ({ navigation }) => {
             <Text style={globalStyles.sectionIntroText}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet arcu eros. Sed sagittis dapibus dui id dignissim. Maecenas aliquet suscipit erat, vestibulum sodales.
             </Text>
-            <Button title='Clear storage' onPress={clearItems} />
+            {/* <Button title='Clear storage' onPress={clearItems} /> */}
         </SafeAreaView>
     );
 }

@@ -21,9 +21,8 @@ const DishSection = ({ dish }) => {
     };
 
     const handleOrder = () => {
-        // console.log('1. in handleOrder', item)
         addOrderedItem(item);
-    }
+    };
 
     return (
         <View
@@ -79,4 +78,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default DishSection
+export default DishSection;

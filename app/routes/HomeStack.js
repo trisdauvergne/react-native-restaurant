@@ -8,14 +8,14 @@ import {
 import WelcomeScreen from "../screens/WelcomeScreen";
 import FoodMenuScreen from "../screens/FoodMenuScreen";
 import DrinksMenuScreen from '../screens/DrinksMenuScreen';
-import ReservationScreen from '../screens/ReservationScreen';
+import OrdersScreen from '../screens/OrdersScreen';
 
 const HomeStack = createStackNavigator(
     {
         Welcome: { screen: WelcomeScreen },
         Food: { screen: FoodMenuScreen },
         Drinks: { screen: DrinksMenuScreen },
-        Reservation: { screen: ReservationScreen },
+        Orders: { screen: OrdersScreen },
     },
     {
         initialRouteName: 'Welcome',

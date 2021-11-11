@@ -22,9 +22,7 @@ import BackgroundScreen from './app/screens/BackgroundScreen';
 import Tabs from './app/routes/Tabs';
 
 const App = () => {
-  // const test = useContext(OrderItemsContext);
-  // console.log('in app.js', test);
-
+  
   let [fontsLoaded] = useFonts({
     'fugaz-one': FugazOne_400Regular,
     'lato-regular': Lato_400Regular,

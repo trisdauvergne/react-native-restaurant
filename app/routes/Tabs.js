@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+    useContext
+} from 'react';
 
 import {
     NavigationContainer
@@ -11,11 +13,14 @@ import {
 import WelcomeScreen from '../screens/WelcomeScreen';
 import FoodMenuScreen from '../screens/FoodMenuScreen';
 import DrinksMenuScreen from '../screens/DrinksMenuScreen';
-import ReservationScreen from '../screens/ReservationScreen';
+import OrdersScreen from '../screens/OrdersScreen';
+import { OrderItemsContext } from '../context/OrderContext';
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
+    const { orderedItems } = useContext(OrderItemsContext);
+
     return (
         <NavigationContainer>
             <Tab.Navigator
@@ -23,17 +28,17 @@ const Tabs = () => {
                     headerShown: false,
                     tabBarShowLabel: true,
                     tabBarLabelStyle: {
-                        fontSize: 20,
+                        fontSize: 17,
                         fontFamily: 'fugaz-one',
                         color: 'black',
-                        marginBottom: 10,
+                        marginBottom: 13,
                         // backgroundColor: '#FAF9F6',
-                        paddingHorizontal: 5,
+                        paddingHorizontal: 0,
                     },
                     tabBarStyle: {
                         backgroundColor: '#FAF9F6',
                         borderTopWidth: 0,
-                        marginHorizontal: 10,
+                        marginHorizontal: 0,
                         borderTopLeftRadius: 10,
                         borderTopRightRadius: 10
                     },
@@ -52,7 +57,10 @@ const Tabs = () => {
                 />
                 <Tab.Screen name='Food' component={FoodMenuScreen} />
                 <Tab.Screen name='Drink' component={DrinksMenuScreen} />
-                <Tab.Screen name='Order' component={ReservationScreen} />
+                <Tab.Screen
+                    name={!orderedItems ? 'Orders' : `Orders (${orderedItems.length})`}
+                    component={OrdersScreen}
+                />
             </Tab.Navigator>
         </NavigationContainer>
     )

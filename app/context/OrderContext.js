@@ -55,11 +55,11 @@ export const OrderItemsProvider = ({ children }) => {
 
     const clearOrderedItems = async () => {
         try {
+            setOrderedItems(null);
             await AsyncStorage.clear();
         } catch(e) {
             console.log('error in clearOrderedItems', e);
         }
-
         console.log('clearOrderedItems has run');
     };
 
