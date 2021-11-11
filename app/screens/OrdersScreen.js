@@ -28,15 +28,20 @@ const OrdersScreen = () => {
                 YOUR ORDER
             </Text>
             <View>
-                {!orderedItems && <Text>Your list is empty</Text>}
+                {!orderedItems && 
+                <Text
+                    style={styles.totalTxt}
+                >
+                    Your list is empty
+                </Text>}
                 {orderedItems && orderedItems.map((item, i) => <OrderedItemSection item={item} key={i}/>)}
             </View>
-            <Text
+            {orderedItems && <Text
                 style={styles.totalTxt}
             >
                 Total = $
-            </Text>
-            <Pressable
+            </Text>}
+            {orderedItems && <Pressable
                 style={{...globalStyles.btn, marginTop: 10}}
                 onPress={clearList}
             >
@@ -45,7 +50,7 @@ const OrdersScreen = () => {
                 >
                     Clear list
                 </Text>
-            </Pressable>
+            </Pressable>}
         </SafeAreaView>
     )
 }
